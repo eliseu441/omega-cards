@@ -9,6 +9,8 @@ const Home = () => {
     { id: 3, carouselName: '2.png', link: 'https://www.linkedin.com/feed/', name: 'King-Aquatic Kingdoms Helike', description: 'Pacote completo de corte e barba', price: 'R$ 150' },
     { id: 4, carouselName: '3.png', link: 'https://www.linkedin.com/feed/', name: 'Queen Kingdoms Helike', description: 'Pacote completo de corte e barba', price: 'R$ 150' },
     { id: 5, carouselName: '4.png', link: 'https://www.linkedin.com/feed/', name: 'Ace Kingdoms Helike', description: 'Pacote completo de corte e barba', price: 'R$ 150' },
+    { id: 6, carouselName: '5.png', link: 'https://www.linkedin.com/feed/', name: 'Ace Kingdoms Helike', description: 'Pacote completo de corte e barba', price: 'R$ 150' },
+    { id: 7, carouselName: '6.png', link: 'https://www.linkedin.com/feed/', name: 'Ace Kingdoms Helike', description: 'Pacote completo de corte e barba', price: 'R$ 200' },
   ]);
 
   const [services] = useState([
