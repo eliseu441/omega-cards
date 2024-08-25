@@ -7,6 +7,7 @@
         background-position: 100% 0;
     }
 }
+
 .cardBarber{
     background: rgb(40, 40, 40);
     background: linear-gradient(75deg, rgb(59, 59, 59) 0%, rgb(14, 14, 14) 100%);
@@ -40,9 +41,13 @@
     position: relative;
     overflow: hidden;
     background-color: rgb(28, 28, 30, 0.6);
-    animation: moveBackground 15s linear infinite;
+    animation: moveBackground 15s alternate-reverse infinite;
 }
-
+@media (max-width: 700px) {
+    .slider-container {
+        animation: moveBackground 2s alternate-reverse infinite;
+    }
+}
 .img-slider-barber {
     display: block;
     width: 100%;
