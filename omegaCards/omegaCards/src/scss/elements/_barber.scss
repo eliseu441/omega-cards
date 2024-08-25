@@ -55,7 +55,10 @@
     object-fit: cover;
     transition: transform 0.5s ease-in-out;
 }
-
+.img-slider-barber:hover {
+    transform: scale(1.1); /* Aumenta o tamanho do SVG */
+    filter: drop-shadow(0 4px 8px rgba(255, 30, 0, 0.753)); /* Aplica uma sombra ao redor do SVG */
+}
 .carousel-item {
     transition: transform 0.5s ease-in-out;
 }
