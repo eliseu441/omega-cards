@@ -1,10 +1,10 @@
 import { render } from 'preact';
 import App from './app.jsx';
-import { AppParamsProvider } from './layout/AppParams/AppParams.jsx';
+import { CartProvider } from './layout/AppParams/AppParams.jsx';
 
 render(
-  <AppParamsProvider>
+  <CartProvider>
     <App />
-  </AppParamsProvider>,
+  </CartProvider>,
   document.getElementById('root')
 );

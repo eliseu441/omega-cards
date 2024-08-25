@@ -2,21 +2,31 @@ import { createContext } from 'preact';
 import { useState, useContext } from 'preact/hooks';
 
 // Criação do contexto
-const AppParamsContext = createContext();
+const CartContext = createContext();
 
 // Criação do provider
-export const AppParamsProvider = ({ children }) => {
-    const [usuario, setUsuario] = useState(null);
-    const [perfil, setPerfil] = useState(null);
+export const CartProvider = ({ children }) => {
+    // Estado que mantém os IDs dos produtos no carrinho
+    const [cartProductIds, setCartProductIds] = useState([]);
+
+    // Função para adicionar um ID ao carrinho
+    const addProductToCart = (productId) => {
+        setCartProductIds((prevIds) => [...prevIds, productId]);
+    };
+
+    // Função para remover um ID do carrinho
+    const removeProductFromCart = (productId) => {
+        setCartProductIds((prevIds) => prevIds.filter((id) => id !== productId));
+    };
 
     return (
-        <AppParamsContext.Provider value={{ usuario, setUsuario, perfil, setPerfil }}>
+        <CartContext.Provider value={{ cartProductIds, addProductToCart, removeProductFromCart }}>
             {children}
-        </AppParamsContext.Provider>
+        </CartContext.Provider>
     );
 };
 
 // Hook para usar o contexto
-export const useAppParams = () => {
-    return useContext(AppParamsContext);
+export const useCart = () => {
+    return useContext(CartContext);
 };

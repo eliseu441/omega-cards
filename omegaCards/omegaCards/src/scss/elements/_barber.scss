@@ -7,7 +7,13 @@
         background-position: 100% 0;
     }
 }
-
+.pagina-servicos {
+    background-image: url("/img/cardsHome/bg_wpp.jpg");
+    padding: 80px 0 0 0;
+    background-color: rgb(39, 39, 39);
+    min-height: 100dvh;
+    margin: 0;
+}
 .cardBarber{
     background: rgb(40, 40, 40);
     background: linear-gradient(75deg, rgb(59, 59, 59) 0%, rgb(14, 14, 14) 100%);
@@ -24,14 +30,7 @@
     border: 3px solid rgb(211, 211, 211);
 }
 
-.pagina-servicos {
-    background-image: url("/img/cardsHome/bg_wpp.jpg");
-   
-    background-color: rgb(39, 39, 39);
-    min-height: 100dvh;
-    padding: 0;
-    margin: 0;
-}
+
 
 .slider-container {
     background-image: url("/img/sliderHome/bg_slider.jpg");
@@ -57,7 +56,7 @@
 }
 .img-slider-barber:hover {
     transform: scale(1.1);
-    filter: drop-shadow(0 4px 8px rgba(255, 30, 0, 0.753)); 
+    filter: drop-shadow(1px 1px 3px rgba(255, 0, 0, 0.753)); 
 }
 .carousel-item {
     transition: transform 0.5s ease-in-out;
@@ -188,10 +187,16 @@
     margin: 0;
 }
 
-.price {
-    color: #da0d0d;
+.price strong {
+    color: #da0d0d; 
+    text-decoration: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border-bottom-style: none;
 }
-
+a {
+    text-decoration: none;
+  }
 /* Estilos responsivos */
 .title-services {
     font-family: 'Roboto', sans-serif;
