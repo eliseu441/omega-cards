@@ -132,11 +132,19 @@
     background-color: transparent; /* Ou qualquer cor de fundo desejada */
   }
 .img-slider-barber {
-    max-width: 80%;
+    max-width: 100%;
     height: auto;
     border-radius: 10px;
 }
-
+@media (max-width: 700px) {
+    .img-slider-barber {
+        width: 120%;
+        max-width: none;
+        margin-left: -17%;
+        
+        /* Outros estilos que desejar aplicar */
+    }
+}
 .slick-dots {
     margin-bottom: 20px;
     margin-left: -2%;
