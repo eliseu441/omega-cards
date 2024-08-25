@@ -12,7 +12,7 @@
     background: linear-gradient(75deg, rgb(59, 59, 59) 0%, rgb(14, 14, 14) 100%);
     color: #f5f5f7;
     border: 3px solid rgb(29, 29, 29);
-    background-image: url("./img/cardsHome/bg_cards.jpg");
+    background-image: url("/img/cardsHome/bg_cards.jpg");
     background-size: cover;
     
 }
@@ -24,7 +24,7 @@
 }
 
 .pagina-servicos {
-    background-image: url("./img/cardsHome/bg_wpp.jpg");
+    background-image: url("/img/cardsHome/bg_wpp.jpg");
    
     background-color: rgb(39, 39, 39);
     min-height: 100dvh;
@@ -33,7 +33,7 @@
 }
 
 .slider-container {
-    background-image: url("./img/sliderHome/bg_slider.jpg");
+    background-image: url("/img/sliderHome/bg_slider.jpg");
     background-size: contain;
     padding: 30px!important;
     border-radius: 0;
