@@ -1,9 +1,11 @@
+
 import React, { useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import SocialWidget from '../Widget/SocialWidget';
 import ContactInfoWidget from '../Widget/ContactInfoWidget';
 import DropDown from './DropDown';
 import { useCart } from '../AppParams/AppParams.jsx'; // Importando o hook aqui
+import CartModal from './../../components/CartModal.jsx'; // Importando a modal
 
 export default function Header({ variant }) {
   const { cartProductIds } = useCart();
@@ -36,9 +38,14 @@ export default function Header({ variant }) {
           <div className="container mt-0">
             <div className="cs-main_header_in">
               <div className="cs-main_header_left">
-                <Link className="cs-site_branding" to="/">
-                  <img src="/img/logo/logo.png" alt="Logo" className="me-2" />
-                </Link>
+                <button type="button" className="btn cartButton btn-link position-absolute top-0 mt-4" data-bs-toggle="modal" data-bs-target="#cartModal">
+                  <i className="bi bi-cart-check-fill" style={{ fontSize: '40px', color: 'rgb(240, 48, 0)' }}></i>
+                  <span className="position-absolute top-0 left-0 start-100 translate-middle badge rounded-pill bg-danger">
+                    {cartProductIds.length}
+                  </span>
+                </button>
+
+
               </div>
               <div className="cs-main_header_center">
                 <div className="cs-nav cs-primary_font cs-medium">
@@ -83,13 +90,11 @@ export default function Header({ variant }) {
                     <span></span>
                   </span>
                 </div>
-                
               </div>
 
               <div className="cs-main_header_right">
                 <div className="cs-toolbox">
                   {/* Botão do carrinho com contador */}
-
                   <span className="cs-icon_btn" onClick={() => setSideHeaderToggle(!sideHeaderToggle)}>
                     <span className="cs-icon_btn_in">
                       <span />
@@ -103,41 +108,11 @@ export default function Header({ variant }) {
             </div>
           </div>
         </div>
-        <button type="button" className="btn cartButton btn-link position-absolute  top-40 mt-3 " data-bs-toggle="modal" data-bs-target="#cartModal">
-          <i className="bi bi-cart-check-fill" style={{fontSize: '40px', color:'rgb(240, 48, 0)' }}></i>
-          <span className="position-absolute top-0 left-0 start-100 translate-middle badge rounded-pill bg-danger">
-            {cartProductIds.length}
-          </span>
-        </button>
+
       </header>
 
-      {/* Modal Bootstrap para exibir os IDs dos produtos no carrinho */}
-      <div className="modal fade" id="cartModal" tabIndex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
-        <div className="modal-dialog">
-          <div className="modal-content">
-            <div className="modal-header">
-              <h5 className="modal-title" id="cartModalLabel">Itens no Carrinho</h5>
-              <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div className="modal-body">
-              <ul className="list-group">
-                {cartProductIds.length > 0 ? (
-                  cartProductIds.map((id, index) => (
-                    <li key={index} className="list-group-item">
-                      Produto ID: {id}
-                    </li>
-                  ))
-                ) : (
-                  <li className="list-group-item">O carrinho está vazio.</li>
-                )}
-              </ul>
-            </div>
-            <div className="modal-footer">
-              <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-            </div>
-          </div>
-        </div>
-      </div>
+      {/* Usando a modal separada */}
+      <CartModal cartProductIds={cartProductIds} />
 
       <div className={sideHeaderToggle ? 'cs-side_header active' : 'cs-side_header'}>
         <button className="cs-close" onClick={() => setSideHeaderToggle(!sideHeaderToggle)} />

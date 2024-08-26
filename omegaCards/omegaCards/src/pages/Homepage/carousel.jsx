@@ -3,10 +3,10 @@ import Slider from 'react-slick';
 import { Link } from 'react-router-dom';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { useCart  } from './../../layout/AppParams/AppParams';
+import { useCart } from './../../layout/AppParams/AppParams';
 
 const Carousel = ({ topServices }) => {
-   const { addProductToCart } = useCart(); // Obtém a função para adicionar produtos ao carrinho
+  const { addProductToCart } = useCart(); // Obtém a função para adicionar produtos ao carrinho
 
   const settings = {
     infinite: true,
@@ -41,7 +41,9 @@ const Carousel = ({ topServices }) => {
   return (
     <div className="slider-container text-center">
       <div className="carousel-header d-flex align-items-center justify-content-center mb-4">
-        <h4 className="carousel-title">Camisas mais vendidas</h4>
+        <h4 className="carousel-title">
+          <img src="/img/logo/logo.png" style={{ width: '70px' }} alt="Logo" className="me-2" />
+          Camisas mais vendidas</h4>
       </div>
       <Slider {...settings}>
         {topServices.map((service) => (
@@ -51,13 +53,13 @@ const Carousel = ({ topServices }) => {
                 src={`/img/sliderHome/p${service.carouselName}`}
                 className="img-slider-barber"
                 alt={service.name}
-                onDoubleClick={() => handleAddToCart(service.id)} // Adiciona ao carrinho no duplo clique
+                onDoubleClick={() => handleAddToCart(service.id)}
               />
             </Link>
             <div className="mt-3">
-              <div 
+              <div
                 className="carousel-caption"
-                onClick={() => handleAddToCart(service.id)} // Adiciona ao carrinho no clique
+                onClick={() => handleAddToCart(service.id)}
               >
                 <h6>{service.name}</h6>
                 <h3 className="price">{service.price}</h3>
