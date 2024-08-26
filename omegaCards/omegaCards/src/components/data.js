@@ -1,11 +1,19 @@
 const data = {
     topServices: [
       { id: 2, carouselName: "1.png", link: "/", name: "Kink-Aquatic Kingdoms Helike", description: "", price: "R$ 150" },
+      { id: 2, carouselName: "2.png", link: "/", name: "JOKER-Aquatic Kingdoms Helike", description: "", price: "R$ 150" },
       { id: 4, carouselName: "3.png", link: "/", name: "Queen Kingdoms Helike", description: "", price: "R$ 150" },
       { id: 5, carouselName: "4.png", link: "/", name: "Ace Kingdoms Helike", description: "", price: "R$ 150" },
       { id: 6, carouselName: "5.png", link: "/", name: "Ace Kingdoms Helike", description: "", price: "R$ 150" },
       { id: 7, carouselName: "6.png", link: "/", name: "Ace Kingdoms Helike", description: "", price: "R$ 200" }
     ],
+    shirts: [
+        { id: 2, frontImage:"front.png" ,carouselName: "ps1.png", link: "/", name: "Kink-Aquatic Kingdoms Helike", description: "", price: "R$ 150" },
+        { id: 4, frontImage:"front.png" ,carouselName: "ps2.png", link: "/", name: "Queen Kingdoms Helike", description: "", price: "R$ 150" },
+        { id: 5, frontImage:"front.png" ,carouselName: "ps3.png", link: "/", name: "Ace Kingdoms Helike", description: "", price: "R$ 150" },
+        { id: 6, frontImage:"front.png" ,carouselName: "ps4.png", link: "/", name: "Ace Kingdoms Helike", description: "", price: "R$ 150" },
+        { id: 7, frontImage:"front.png" ,carouselName: "ps5.png", link: "/", name: "Ace Kingdoms Helike", description: "", price: "R$ 200" },
+      ],
     services: [
       { id: 1, link: "/", name: "Venda de Camisas", description: "Corte de cabelo profissional", price: "R$ 50", details: "Venda separada de camisas a preço competitivo.", genericDetails: "Serviço realizado por profissionais experientes." },
       { id: 2, link: "/", name: "Venda de Baralhos", description: "Aparar e modelar a barba", price: "R$ 30", details: "Venda de baralhos de primeira linha completamente personalizados.", genericDetails: "Utilizamos produtos de alta qualidade." },

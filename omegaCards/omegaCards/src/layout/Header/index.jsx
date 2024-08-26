@@ -60,7 +60,7 @@ export default function Header({ variant }) {
                       <NavLink to="/" onClick={() => setMobileToggle(false)}>Início</NavLink>
                     </li>
                     <li>
-                      <NavLink to="/store" onClick={() => setMobileToggle(false)}>Coleçoes(roupas)</NavLink>
+                      <NavLink to="/store" onClick={() => setMobileToggle(false)}>Outlet</NavLink>
                     </li>
                     <li>
                       <NavLink to="/cardStore" onClick={() => setMobileToggle(false)}>Cartas</NavLink>

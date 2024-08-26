@@ -1,6 +1,7 @@
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Homepage/Home';
 import Header from  './layout/Header/index'
+import Store from  './pages/Store/Store'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -15,6 +16,7 @@ function App() {
       <Header/>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/store" element={<Store />} />
       </Routes>
     </HashRouter>
   );
