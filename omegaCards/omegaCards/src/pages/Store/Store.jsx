@@ -54,6 +54,7 @@ export default function Store() {
 
     return (
         <div className="pageStore mt-4">
+            <h3>*clique na imagem do card para ver em tamanho aumentado*</h3>
             <div className="row">
                 {shirts.map((shirt) => (
                     <div key={shirt.id} className="col-lg-2 col-md-3 col-sm-4 col-6 mb-4">

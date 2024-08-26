@@ -1,11 +1,18 @@
 .pageStore {
-    padding: 90px 5px 0 5px;
+    padding: 95px 5px 0 5px;
+    margin: 0!important;
+    min-height: 100dvh;
     color: white;
     text-align: center;
+    background-image: url('/img/store/bg_store.jpg');
+    background-size: contain;
     .card {
         display: flex;
         flex-direction: column;
         height: 100%;
+        -webkit-box-shadow: inset -1px -1px 214px -109px rgba(0,0,0,0.75);
+-moz-box-shadow: inset -1px -1px 214px -109px rgba(0,0,0,0.75);
+box-shadow: inset -1px -1px 214px -109px rgba(0,0,0,0.75);
       }
       
       .image-container {
