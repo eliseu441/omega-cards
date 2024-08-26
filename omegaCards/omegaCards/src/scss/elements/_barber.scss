@@ -63,6 +63,9 @@
 }
 
 .carousel-caption {
+    cursor: pointer;
+    border: 2px solid white;
+    margin: -20px 0 10px 0;
     position: relative;
     left: 40%;
     transform: translateX(-50%);
@@ -73,7 +76,11 @@
     white-space: nowrap;
     width: max-content;
 }
-
+@media screen and (max-width: 575px) {
+    .slick-arrow{
+      display: none !important;
+    }
+}
 /* Dark theme colors */
 .dark-theme {
     background-color: #1c1c1e;

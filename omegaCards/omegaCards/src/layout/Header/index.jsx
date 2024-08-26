@@ -47,7 +47,7 @@ export default function Header({ variant }) {
             <div className="cs-main_header_in">
               <div className="cs-main_header_left">
                 <button type="button" className="btn cartButton btn-link position-absolute top-0 mt-4" data-bs-toggle="modal" data-bs-target="#cartModal">
-                  <i className="bi bi-cart-check-fill" style={{ fontSize: '40px', color: 'rgb(240, 48, 0)' }}></i>
+                  <i className="bi bi-cart-check-fill fs-1" style={{  color: 'white' }}></i>
                   <span className="position-absolute top-0 left-0 start-100 translate-middle badge rounded-pill bg-danger">
                     {cartProductIds.length}
                   </span>

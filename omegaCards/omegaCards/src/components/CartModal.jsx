@@ -63,7 +63,7 @@ export default function CartModal() {
                       className="list-group-item d-flex justify-content-between align-items-center text-light border-light"
                     >
                       <div className="d-flex align-items-center">
-                        <span className="badge bg-primary me-3">{item.count}</span> {/* Quantidade do produto */}
+                        <span className="badge bg-secondary me-1 ms-0">{item.count}</span> {/* Quantidade do produto */}
                         <img
                           src={`/img/sliderHome/p${product.carouselName}`}
                           alt={product.name}
