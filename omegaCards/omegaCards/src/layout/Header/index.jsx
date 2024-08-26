@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import SocialWidget from '../Widget/SocialWidget';
@@ -29,6 +28,15 @@ export default function Header({ variant }) {
     };
   }, []);
 
+  useEffect(() => {
+    // Adiciona ou remove a classe de desfoque ao corpo quando o mobileToggle muda
+    if (mobileToggle) {
+      document.body.classList.add('body-blur');
+    } else {
+      document.body.classList.remove('body-blur');
+    }
+  }, [mobileToggle]);
+
   return (
     <>
       <header
@@ -44,8 +52,6 @@ export default function Header({ variant }) {
                     {cartProductIds.length}
                   </span>
                 </button>
-
-
               </div>
               <div className="cs-main_header_center">
                 <div className="cs-nav cs-primary_font cs-medium">
@@ -53,37 +59,15 @@ export default function Header({ variant }) {
                     <li>
                       <NavLink to="/" onClick={() => setMobileToggle(false)}>Início</NavLink>
                     </li>
-                    <li className="menu-item-has-children">
-                      <NavLink to="/calendar" onClick={() => setMobileToggle(false)}>Agendamento</NavLink>
-                      <DropDown>
-                        <ul>
-                          <li>
-                            <Link to="/calendar" onClick={() => setMobileToggle(false)}>Agendamento Online</Link>
-                          </li>
-                          <li>
-                            <Link target="_blank" to="https://api.whatsapp.com/send/?phone=5512996229081" onClick={() => setMobileToggle(false)}>Whatsapp</Link>
-                          </li>
-                        </ul>
-                      </DropDown>
-                    </li>
-                    <li className="menu-item-has-children">
-                      <NavLink to="/redirect" onClick={() => setMobileToggle(false)}>Serviços da Barbearia</NavLink>
-                      <DropDown>
-                        <ul>
-                          <li>
-                            <Link to="/budget" onClick={() => setMobileToggle(false)}>Orçamento Online</Link>
-                          </li>
-                          <li>
-                            <Link to="/barber" onClick={() => setMobileToggle(false)}>Promoções</Link>
-                          </li>
-                          <li>
-                            <Link to="/barber" onClick={() => setMobileToggle(false)}>Produtos</Link>
-                          </li>
-                        </ul>
-                      </DropDown>
+                    <li>
+                      <NavLink to="/store" onClick={() => setMobileToggle(false)}>Coleçoes(roupas)</NavLink>
                     </li>
                     <li>
-                      <NavLink to="/contact" onClick={() => setMobileToggle(false)}>Unidades/Contato</NavLink>
+                      <NavLink to="/cardStore" onClick={() => setMobileToggle(false)}>Cartas</NavLink>
+                    </li>
+                    
+                    <li>
+                      <NavLink target="_blank" to="https://api.whatsapp.com/send/?phone=5512997858024" onClick={() => setMobileToggle(false)}>Contato</NavLink>
                     </li>
                   </ul>
                   <span className={`cs-munu_toggle ${mobileToggle ? 'cs-toggle_active' : ''}`} onClick={() => setMobileToggle(!mobileToggle)}>
@@ -134,6 +118,9 @@ export default function Header({ variant }) {
           </div>
         </div>
       </div>
+
+      {/* Sobreposição para efeito de desfoque */}
+      <div className={`overlay-blur ${mobileToggle ? 'active' : ''}`} onClick={() => setMobileToggle(false)} />
     </>
   );
 }
